@@ -11,7 +11,7 @@ dotenv.config();
 console.log(process.env.EXCEL_PATH);
 
 function readDataFromExcel() {
-    const file = reader.readFile(path.join(process.env.EXCEL_PATH));
+    const file = reader.readFile(path.resolve(process.env.EXCEL_PATH));
     const data = reader.utils.sheet_to_json(file.Sheets[file.SheetNames[0]]);
     return data;
 }
